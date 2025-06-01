@@ -1,143 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Navigation */
-        nav {
-            background: #2c3e50;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        /* Main content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            margin-top: 60px;
-        }
-
-        /* Welcome section */
-        .welcome {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 2rem 0;
-        }
-
-        /* Experience and Projects sections */
-        .section {
-            margin: 3rem 0;
-        }
-
-        .section h2 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesse LeGault - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    nav {
+      background: #981e32;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #c2bfbf;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      margin-top: 80px;
+    }
+    .welcome {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 2rem 0;
+    }
+    .section {
+      margin: 3rem 0;
+    }
+    .section h2 {
+      border-bottom: 2px solid #981e32;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card details {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      background-color: #fff;
+    }
+    .card details summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      list-style: none;
+    }
+    .card details summary::before {
+      content: "\25B6";
+      display: inline-block;
+      margin-right: 0.5rem;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+    }
+    .card details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .card details p {
+      margin: 0.5rem 0;
+    }
+    .contact-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .contact-link a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #981e32;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-link a:hover {
+      background-color: #7b1729;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#welcome">Welcome</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <!-- Welcome Section -->
-        <section id="welcome" class="welcome">
-            <h1>Your Name</h1>
-            <img src="/api/placeholder/200/200" alt="Your Profile" class="profile-img">
-            <p>Your mission statement goes here. Write a brief introduction about yourself,
-               your goals, and what you're passionate about in your field.</p>
-        </section>
+  <div class="container">
+    <section id="welcome" class="welcome">
+      <h1>Jesse LeGault</h1>
+      <img src="/mnt/data/Jesse.LeGault.Profile.jpg" alt="Jesse LeGault" class="profile-img">
+      <p>Mission-driven data analyst passionate about public service, equity, and civic empowerment. Experienced in SQL, Python, data visualization, and supporting transparency in data-driven decision-making.</p>
+      <div class="contact-link">
+        <a href="/mnt/data/Jesse.LeGault.Resume.pdf" download>Download Resume</a>
+        <a href="mailto:jesse.legault@pm.me">Email Me</a>
+        <a href="https://www.linkedin.com/in/jesse-legault-wsu" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+</section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Work Experience</h2>
-            <div class="card">
-                <h3>Job Title</h3>
-                <p>Company Name | Date - Present</p>
-                <p>Description of your role and key achievements.</p>
-            </div>
-            <!-- Add more experience cards as needed -->
-        </section>
+<section id="experience" class="section">
+  <h2>Work Experience</h2>
+  <div class="card">
+    <details>
+      <summary>Business Information Systems Intern — United Grain Corp | May 2024 – Aug 2024</summary>
+      <p>During my internship at United Grain Corporation, I led several high-impact projects that modernized the company's data management systems and improved customer relationships. My primary focus was the Customer Visibility Project, where I transformed the company's customer data management from a manual Excel-based system to an interactive Power BI dashboard. This project required extensive collaboration with multiple departments to gather requirements and ensure the final product would serve diverse stakeholder needs. I facilitated cross-functional meetings to collect initial input and conducted iterative feedback sessions to refine the dashboard's functionality. The project culminated in a presentation to senior leadership, where I demonstrated the dashboard's capabilities and its potential impact on business operations. To ensure long-term sustainability, I created comprehensive documentation including a user guide and recommended steps for future automation, incorporating DAX code for advanced functionality.</p>
+      <p>In parallel, I contributed to the development of the Profit Partner mobile application, a strategic initiative aimed at strengthening relationships with grain producers, the company's primary customer base. Using Figma, I designed and prototyped the application interface, incorporating UI/UX best practices throughout the development process. My approach included extensive research into producer needs and preferences, ensuring the final design would deliver meaningful value to end users. The prototype demonstrated how producers could more effectively interact with United Grain and access critical services through the application.</p>
+      <p>I also played a key role in the company's Enterprise Resource Planning (ERP) system redesign initiative. This complex project involved participating in vendor meetings and conducting comprehensive user research across all company departments. I met with individual teams to document their current processes, pain points, and desired improvements in their software tools. This deep-dive approach to understanding user needs and workflows provided valuable insights that informed the ERP system requirements and design decisions. My research helped ensure the new system would effectively support each department's specific operational needs while maintaining cohesion across the organization.</p>
+      <p>Throughout these projects, I consistently demonstrated strong analytical skills, effective stakeholder communication, and the ability to translate business needs into technical solutions. My work contributed to United Grain's digital transformation efforts and laid groundwork for continued improvements in data management and customer service capabilities.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Data Analytics Tutor — Washington State University | Feb 2024 – May 2024</summary>
+      <p>As a Data Analytics tutor at Washington State University, I provided comprehensive support to undergraduate students navigating the complexities of data analysis and statistical programming. My role involved conducting one-on-one and small group tutoring sessions where I broke down complex analytical concepts into digestible components that aligned with students' varying levels of technical proficiency.</p>
+      <p>A significant portion of my work focused on helping students master programming languages essential to data analytics, including Python, R, and SQL. The live tutoring sessions often centered around real-time code review and troubleshooting, where I helped students identify and correct errors in their analysis scripts while explaining the underlying principles. This hands-on approach not only improved students' immediate understanding but also enhanced their problem-solving skills and coding practices.</p>
+      <p>I regularly reviewed students' project work, offering constructive feedback on both technical implementation and analytical approach. Beyond the technical aspects, I developed an effective teaching methodology that emphasized practical application of theoretical concepts. This included referencing scenarios that demonstrated how statistical principles and analytical methods apply to real-world data challenges. The experience strengthened my own mastery of data analytics concepts, as teaching others required a deeper understanding of the material and the ability to explain complex ideas in clear, accessible terms.</p>
+      <p>This role honed my ability to communicate technical concepts to non-technical audiences, a skill that proves valuable in professional settings where data analysts must present findings to stakeholders from various backgrounds. It also reinforced my expertise in core data analytics tools and methodologies through the process of teaching and explaining them to others.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Security Admin Assistant — Nisqually Red Wind Casino | Sep 2019 – Jul 2022</summary>
+      <p>During my tenure at Nisqually Red Wind Casino, I spearheaded several critical initiatives that modernized security operations while ensuring strict compliance with state gaming regulations. My flagship achievement was the complete transformation of the facility's key management system. This complex project began with creating detailed paper-based mapping of key matrices, progressed through developing an Excel-based database schema, and culminated in implementing a SQL-driven proprietary key management solution. This digital transformation significantly improved key tracking accuracy and operational efficiency while maintaining the stringent security protocols required in a gaming environment.</p>
+      <p>I implemented a comprehensive inventory management system inspired by industrial best practices, introducing a barcode-based bin system that modernized how security equipment and supplies were tracked and maintained. This system dramatically reduced search times and improved inventory accuracy, while providing real-time visibility into supply levels and usage patterns.</p>
+      <p>A significant portion of my responsibilities focused on regulatory compliance and training. I created and maintained comprehensive training materials for security personnel, ensuring all staff were well-versed in both standard operating procedures and emergency protocols. I was responsible for ensuring compliance with state-mandated security requirements, preparing for and successfully completing quarterly and annual audits. This involved maintaining detailed documentation, conducting regular internal assessments, and implementing corrective actions when needed.</p>
+      <p>Throughout my time in this position, I consistently demonstrated the ability to manage complex systems, implement data-driven solutions, and maintain high standards of security and compliance in a highly regulated environment. My work contributed to more efficient operations while ensuring the casino maintained its strong security posture and regulatory compliance.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Logistics Analyst — Shred-It | Aug 2018 – Sep 2019</summary>
+      <p>At Shred-It, I managed complex logistics operations while maintaining detailed customer and compliance records for secure document destruction services. As the primary administrator of our SAP-based customer database, I maintained comprehensive records of service schedules, payment histories, and customer interactions for a large client portfolio. This role required meticulous attention to detail in tracking service requirements, managing customer relationships, and ensuring accurate billing across multiple service types.</p>
+      <p>Using proprietary logistics software, I optimized route planning and scheduling for our fleet of secure document destruction vehicles. This involved daily route analysis and adjustments to accommodate changing customer needs while maximizing operational efficiency. I coordinated closely with drivers and dispatch to ensure timely service delivery while maintaining the security standards essential to our document destruction services.</p>
+      <p>A critical aspect of my role involved ensuring compliance with Department of Transportation (DOT) regulations. I maintained detailed driver logs, vehicle maintenance records, and route documentation to meet strict regulatory requirements. This included regular audits of documentation and implementing processes to ensure ongoing compliance with transportation safety standards.</p>
+      <p>My position required balancing customer service excellence with operational efficiency and regulatory compliance. I developed systematic approaches to managing these competing priorities while maintaining the high level of security and confidentiality required in the document destruction industry.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Area Manager — Amazon | Jun 2014 – Mar 2018</summary>
+      <p>During my tenure at Amazon, I held a dynamic leadership role that blended operational excellence, continuous improvement, and global collaboration. As an Area Manager, I led teams of over 50 associates, driving process optimization initiatives through Lean, Six Sigma, and Kaizen methodologies. These efforts resulted in significant operational efficiencies and the adoption of standardized procedures across multiple fulfillment centers.</p>
+      <p>My role in risk assessment and management involved analyzing operational data, workforce trends, and KPIs to identify potential risks and implement proactive mitigation strategies. I used forecasting and predictive analytics to support strategic staffing decisions and maintain safety and productivity standards across high-performance environments.</p>
+      <p>A major focus of my role was team development. I designed and delivered training programs that integrated classroom instruction with hands-on operational learning. The standardized training materials I created were adopted across multiple facilities, supporting the technical and leadership growth of team members and enhancing overall operational performance.</p>
+      <p>One of my most impactful contributions was managing real-time workflows for global fulfillment centers from a remote setting. This required coordinating cross-functional teams, making fast, data-driven decisions, and adapting operational procedures to local and cultural needs. I also played a key role in new fulfillment center launches, establishing procedures and training leadership teams.</p>
+      <p>Throughout my career at Amazon, I consistently delivered data-driven process improvements while balancing priorities across operational efficiency, continuous improvement (OpEx), risk management, and team capability building.</p>
+    </details>
+  </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Academic Projects</h2>
-            <div class="card">
-                <h3>Project Name</h3>
-                <p>Course / Date</p>
-                <p>Description of the project, technologies used, and outcomes.</p>
-            </div>
-            <!-- Add more project cards as needed -->
-        </section>
-    </div>
-</body>
-</html>
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="card">
+    <details>
+      <summary>Customer Visibility Project</summary>
+      <p>Academic Project</p>
+      <p>Designed ETL pipeline for 55 years of customer data and created Power BI dashboards for executive use.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Yelp Data Pipeline</summary>
+      <p>Academic Project</p>
+      <p>Used Python and the Yelp API to analyze reviews, developed PostgreSQL database, and built a dashboard to query insights.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Key Database Management</summary>
+      <p>Developed and maintained a key tracking system using Excel and SQL to support daily operations. Built pre-configured audit reports to ensure compliance with Washington State regulatory standards. Designed a relational schema for traceability and automated updates using SQL triggers and stored procedures.</p>
+    </details>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Banking Market ETL</summary>
+      <p>Extracted and parsed structured web data using Python, pandas, and BeautifulSoup. Transformed and validated international market cap data for financial market trend analysis. Loaded processed data into CSV and SQLite databases and performed validation with SQL queries.</p>
+    </details>
+  </div>
+</section>
