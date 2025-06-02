@@ -215,7 +215,16 @@
   <div class="card">
     <details>
       <summary>Yelp Data Pipeline</summary>
-      <p>Used Python and the Yelp API to analyze reviews, developed PostgreSQL database, and built a dashboard to query insights.</p>
+      <p>This project focused on building a full-stack data pipeline using real-world business and customer review data from Yelp. The goal was to collect, organize, and present actionable insights about local businesses.</p>
+      <p>Key components of the project included:</p>
+        <ul>
+            <li><strong>Extraction</strong>: Used the Yelp API and Python to gather business and review data, including names, ratings, locations, review text, and categories.</li>
+            <li>Database Design: Modeled and implemented a normalized relational database in PostgreSQL. Designed schema relationships between businesses, reviews, and user data to support efficient querying.</li>
+            <li>Transformation & Loading: Parsed and cleaned the data in Python, then inserted it into PostgreSQL using psycopg2 and batch-loading techniques.</li>
+            <li>Interface Development: Built a lightweight Python-based interface that allowed users to query the database and view search results (e.g., top-rated restaurants in a zip code, most-reviewed businesses by category).</li>
+            <li>Analysis & Insights: Enabled users to extract insights from customer feedback patterns, average ratings by location, and review volume over time.</li>
+        </ul>
+      <p>This project showcased end-to-end skills in API usage, relational schema design, SQL querying, and Python dashboard development for data exploration.</p>
     </details>
   </div>
   <div class="card">
